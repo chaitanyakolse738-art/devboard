@@ -22,5 +22,6 @@ jobs:
          uses: docker/build-push-action@v7
          with:
            context: ./frontend
+           file:  ./frontend/Dockerfile
            push: true
            tags: chaitanya057/devboard-frontend:latest
