@@ -1,8 +1,10 @@
-name: ci
+name: ci workflow
 
 on:
   push:
     branches: [advanced]
+    paths: 
+     - 'devboard/**'
 
 
 jobs:
@@ -38,5 +40,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
+          context: ./frontend/Dockerfil
           push: true
-          tags:  ${{ vars.DOCKERHUB_USERNAME }}/devboard-forntend:latest
+          tags:  ${{ vars.DOCKERHUB_USERNAME }}/devboard-forntend:latestgit
