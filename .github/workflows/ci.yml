@@ -42,4 +42,4 @@ jobs:
         with:
           context: ./frontend/Dockerfile
           push: true
-          tags:  ${{ vars.DOCKERHUB_USERNAME }}/devboard-forntend:latestgit
+          tags:  ${{ vars.DOCKERHUB_USERNAME }}/devboard-forntend:latest
