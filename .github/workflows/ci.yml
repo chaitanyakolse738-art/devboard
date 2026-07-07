@@ -20,12 +20,13 @@ jobs:
       - name: setup Node.js
         uses: actions/setup-node@v6
         with: 
-          node_version: "v26"
+          node_version: 'v26'
           cache: npm
           check-latest: false
 
       - name: install package
         run: npm ci 
+        working-directory: frontend
 
       - name: Run Linter
         run: npm run Linter
