@@ -11,7 +11,7 @@ on:
 jobs:
   frontend:
     
-    runs-on: ubutnu-latest
+    runs-on: ubuntu-latest
 
     steps:
       
