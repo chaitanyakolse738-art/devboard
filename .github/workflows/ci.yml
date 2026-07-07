@@ -4,8 +4,7 @@ name: ci workflow
 on:
   push:
     branches: [advanced]
-    paths: 
-     - 'frontend/**'
+  
 
 
 jobs:
@@ -21,16 +20,17 @@ jobs:
       - name: setup Node.js
         uses: actions/setup-node@v6
         with: 
-          node_version: 'v26'
+          node-version: '26'
           cache: npm
           check-latest: false
 
       - name: install package
         run: npm ci 
-        working-directory: frontend
+        working-directory: ./frontend
 
       - name: Run Linter
         run: npm run Linter
+        working-directory: ./frontend
 
 
       - name: Login to Docker Hub
