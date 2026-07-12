@@ -2,10 +2,11 @@ name : cd workflow
 
 on:
     workflow_run:
-        workflows: [Ci workflow]
+        workflows: ["Ci workflow"]
         types:
-            - completed
-        branches: advanced
+            completed
+        branches:
+            advanced
 
 
 
