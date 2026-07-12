@@ -101,7 +101,7 @@ jobs:
   deployment:
 
      needs: [frontend,backend]
-     uses: ./.github/workflows/ci.yml
+     uses: ./.github/workflows/cd.yml
      secrets: inherit
 
 
