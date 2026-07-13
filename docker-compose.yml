@@ -44,7 +44,7 @@ services:
 
   frontend:
     build: ./frontend
-    image: chaitanya057/chaitanya057/devboard-forntend
+    image: chaitanya057/devboard-frontend
 
     depends_on:
       - backend
