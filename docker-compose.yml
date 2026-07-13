@@ -30,7 +30,7 @@ services:
 
   backend:
     # build = local; image = the tag CI pushes and CD pulls (IMAGE_TAG, else latest).
-    image: chaitanya057/devboard:backend${IMAGE_TAG:-latest}
+    image: chaitanya057/devboard:backend:${IMAGE_TAG:-latest}
     environment:
       PORT: "${BACKEND_PORT}"
       # Built from the Postgres vars above so the credentials live in one place.
@@ -42,7 +42,7 @@ services:
       - "${BACKEND_HOST_PORT}:${BACKEND_PORT}"   # host:container — direct curl/debug; the UI uses the gateway
 
   frontend:
-    image: chaitanya057/devboard-forntend${IMAGE_TAG:-latest}
+    image: chaitanya057/devboard-frontend:${IMAGE_TAG:-latest}
 
     depends_on:
       - backend
