@@ -1,0 +1,41 @@
+name: Dependency_scanning
+
+on:
+ workflow_call:
+   
+
+jobs:
+  
+  dependency_scan:
+
+   runs-on: ubuntu-latest
+
+   steps:
+
+    - name: checkout code
+      uses: actions/checkout@v7
+
+    - name: setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '26'
+        cache: npm
+        cache-dependency-path: ./frontend/package-lock.json
+      
+    - name: Scan for Vulnerabilities
+      run: npm audit --audit-level=high
+
+
+
+    - name: Setup Go #backend
+      uses: actions/setup-go@v6
+      with: 
+          go-version: '1.23'
+          go-version-file: 'go.mod'
+          cache: true
+          check-latest: false
+          cache-dependency-path: 'go.sum'
+
+    - name: Run Govulncheck
+      uses: golang/govulncheck-action@v1
+      
