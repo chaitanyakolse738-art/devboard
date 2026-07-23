@@ -1,0 +1,13 @@
+name: DevSecOps_Security
+
+on:
+ push:
+  branches:
+    - devsecops_practice
+
+
+    
+jobs:
+
+        code_quality:
+          uses: ./.github/workflows/code_quality.yml
