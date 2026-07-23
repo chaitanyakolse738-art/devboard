@@ -41,5 +41,16 @@ jobs:
       run: go install golang.org/x/vuln/cmd/govulncheck@v1.1.4
 
     - name: Run Govulncheck
-      run: govulncheck ./...
+      run: govulncheck ./... > govulncheck-report.txt
       working-directory: ./backend
+
+
+
+
+    - name: Upload Report to Artifacts
+      if: always() # Ensures report uploads even if tests fail
+      uses: actions/upload-artifact@v4
+      with:
+            name: dependency-scan-report
+            path: reports/dependency-report.txt
+            retention-days: 5
