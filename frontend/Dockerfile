@@ -1,7 +1,7 @@
 # Stage 1 — build the app into static files!
 FROM node:20-alpine AS build
 WORKDIR /app
-COPYyy package*.json ./
+COPY package*.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
