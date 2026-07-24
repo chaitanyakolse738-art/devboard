@@ -32,7 +32,7 @@ jobs:
         
 
    - name: Docker build
-     run: dokcer build -t  ${{ vars.DOCKERHUB_USERNAME }}/devboard-${{ matrix.folders}}:latest .
+     run: docker build -t  ${{ vars.DOCKERHUB_USERNAME }}/devboard-${{ matrix.folders}}:latest .
      working-directory: ${{ matrix.folders }}
 
    - name: Run Trivy vulnerability scanner
