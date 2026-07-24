@@ -1,5 +1,6 @@
-# Stage 1: Build
-FROM golang:1.22.4-alpine AS builder
+# Single-stage: build and run the Go binary from the same golang image.
+# (No multi-stage yet — slimming the final image comes later in the course.)
+FROM golang:1.22-alpine
 
 WORKDIR /app
 
@@ -10,14 +11,6 @@ RUN go mod download
 # Build the binary.
 COPY . .
 RUN CGO_ENABLED=0 go build -o devboard-backend .
-
-# Stage 2: Runtime
-FROM alpine:latest
-
-WORKDIR /app
-
-# Copy binary from builder stage.
-COPY --from=builder /app/devboard-backend .
 
 # Run as a non-root user.
 RUN adduser -D -u 10001 app && chown -R app:app /app
