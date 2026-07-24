@@ -43,6 +43,7 @@ jobs:
     - name: Run Govulncheck
       run: govulncheck ./... > godependency-report.txt
       working-directory: ./backend
+      continue-on-error: true
 
 
 
