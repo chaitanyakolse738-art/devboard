@@ -8,6 +8,10 @@ jobs:
  docker_scan:
 
   runs-on: ubuntu-latest
+  strategy:
+            fail-fast: false
+            matrix: 
+                folders: ['frontend', 'backend']
 
   steps:
 
@@ -17,9 +21,4 @@ jobs:
    - name: Run Hadolint Linter
      uses: hadolint/hadolint-action@v3.1.0
      with:
-      dockerfile: ./frontend/Dockerfile
-
-   - name: Run Hadolint Linter
-     uses: hadolint/hadolint-action@v3.1.0
-     with:
-       dockerfile: ./frontend/Dockerfile
+      dockerfile: ${{matrix.folders}}/Dockerfile
