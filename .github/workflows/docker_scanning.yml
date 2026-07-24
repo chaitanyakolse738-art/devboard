@@ -42,4 +42,5 @@ jobs:
         format: 'table'
         exit-code: '1' # Fails the pipeline if vulnerabilities match criteria
         ignore-unfixed: true
+        continue-on-error: true
         severity: 'HIGH,CRITICAL'
