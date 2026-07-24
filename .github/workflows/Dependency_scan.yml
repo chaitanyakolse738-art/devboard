@@ -41,7 +41,7 @@ jobs:
       run: go install golang.org/x/vuln/cmd/govulncheck@v1.1.4
 
     - name: Run Govulncheck
-      run: govulncheck ./... > govulncheck-report.txt
+      run: govulncheck ./... > godependency-report.txt
       working-directory: ./backend
 
 
@@ -52,5 +52,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
             name: dependency-scan-report
-            path: reports/dependency-report.txt
+            path: reports/godependency-report.txt
             retention-days: 5
