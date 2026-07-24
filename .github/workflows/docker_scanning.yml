@@ -29,8 +29,7 @@ jobs:
      with:
         username: ${{ vars.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-        secrets: inherit
-
+        
 
    - name: Docker build
      run: dokcer build -t  ${{ vars.DOCKERHUB_USERNAME }}/devboard-${{ matrix.folders}}:latest .
