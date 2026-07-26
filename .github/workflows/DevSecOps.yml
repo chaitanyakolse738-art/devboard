@@ -27,3 +27,7 @@ jobs:
         sonar_Quebe:
            uses: ./.github/workflows/sonarQube_scanner.yml
            secrets: inherit
+
+        
+        code_test_cases:
+           uses: ./.github/workflows/code_test.yml
