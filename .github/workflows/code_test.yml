@@ -22,12 +22,12 @@ jobs:
           cache-dependency-path: './frontend/package-lock.json'
 
      - name: install package
-       run: npm ci 
+       run: npm ci --legacy-peer-deps
        working-directory: ./frontend
 
 
      - name: Run Test Cases
-       run: npm test
+       run: npm test  
        working-directory: frontend
 
 
