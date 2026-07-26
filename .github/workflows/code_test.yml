@@ -22,7 +22,7 @@ jobs:
           cache-dependency-path: ./frontend/package-lock.json
 
      - name: install package
-       run: npm install -D --legacy-peer-deps
+       run: npm install --legacy-peer-deps
        working-directory: ./frontend
 
 
