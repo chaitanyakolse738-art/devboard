@@ -31,3 +31,8 @@ jobs:
         
         code_test_cases:
            uses: ./.github/workflows/code_test.yml
+
+        
+        docker_push:
+          uses: ./.github/workflows/docker_push.yml
+          needs: [code_quality,code_test,Dependency_scan,docker_scanning,code_test,sonarQube_scanner]
