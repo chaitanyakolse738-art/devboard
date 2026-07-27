@@ -35,4 +35,4 @@ jobs:
         
         docker_push:
           uses: ./.github/workflows/docker_push.yml
-          needs: [code_quality,code_test,Dependency_scan,docker_scanning,code_test,sonarQube_scanner]
+          needs: [code_quality,secreat_scanning,Dependency_scan,docker_scanning,code_test,sonarQube_scanner]
