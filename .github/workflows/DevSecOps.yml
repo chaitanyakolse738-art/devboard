@@ -9,6 +9,9 @@ on:
     
 jobs:
 
+## ------------ CI -------------------
+
+
         code_quality:
           uses: ./.github/workflows/code_quality.yml
 
@@ -43,7 +46,11 @@ jobs:
          uses: ./.github/workflows/deploy.yml
          needs: [docker_push]
          secrets: inherit
+
+
+    #---------- CD ---------------
  
+      #dast
         dast:
          uses: ./.github/workflows/dast.yml
          needs: [deploy]
