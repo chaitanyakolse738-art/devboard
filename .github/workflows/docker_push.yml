@@ -6,7 +6,7 @@ on:
 jobs:
   
   docker_push:
-  
+
    runs-on: ubutnut_latest
    strategy:
     fail-fast: false
@@ -31,7 +31,7 @@ jobs:
       with:
         contest: ${{ matrix.folders }}
         push: true
-        tags:  ${{ vars.DOCKERHUB_USERNAME }}/devboard-${{ matrix-folders }}:latest 
+        tags:  ${{ vars.DOCKERHUB_USERNAME }}/devboard-${{ matrix.folders }}:latest 
 
 
     
